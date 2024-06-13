@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GameOver</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            background-image: url('img/GameOver.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .modal {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            max-width: 80%;
+            animation: fadeIn 0.3s ease-out;
+            position: relative;
+        }
+
+        .modal img {
+            width: 120px; /* 이미지 크기 조정 */
+            margin: 10px; /* 이미지 간격 설정 */
+            cursor: pointer; /* 커서 모양 변경 */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="modal">
+    <h2>Game Over!</h2>
+    <p>너구리에게 들켜 구출에 실패했습니다!ㅜㅜ<br>(=🝦 ༝ 🝦=)</p>
+    <p>Your final score: <strong id="final-score"></strong></p>
+
+    <div>
+        <img src="img/home_button.png" alt="Home" id="home-button">
+        <img src="img/restart_button.png" alt="Replay" id="replay-button">
+    </div>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = urlParams.get('score') ? parseInt(urlParams.get('score')) : 0;
+    document.getElementById("final-score").textContent = score;
+
+    setTimeout(() => {
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'block';
+
+        // Home으로 가기 버튼 클릭 이벤트
+        document.getElementById('home-button').addEventListener('click', () => {
+            window.location.href = "index.html";
+        });
+
+        // 다시하기 버튼 클릭 이벤트
+        document.getElementById('replay-button').addEventListener('click', () => {
+            window.location.href = "GameStart.html";
+        });
+
+        // Home 버튼 호버 이벤트
+        document.getElementById('home-button').addEventListener('mouseover', () => {
+            document.getElementById('home-button').src = 'img/home_button_push.png';
+        });
+
+        document.getElementById('home-button').addEventListener('mouseout', () => {
+            document.getElementById('home-button').src = 'img/home_button.png';
+        });
+
+        // Replay 버튼 호버 이벤트
+        document.getElementById('replay-button').addEventListener('mouseover', () => {
+            document.getElementById('replay-button').src = 'img/restart_button_push.png';
+        });
+
+        document.getElementById('replay-button').addEventListener('mouseout', () => {
+            document.getElementById('replay-button').src = 'img/restart_button.png';
+        });
+
+    }, 2000);
+
+</script>
+</body>
+</html>

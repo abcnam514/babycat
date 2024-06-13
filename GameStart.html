@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>GameStart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            background-image: url('img/GameStart.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .chat img {
+            width: 500px;
+            position: absolute;
+            top: 11%;
+            left: 19%;
+            object-fit: contain;
+        }
+
+        .start img {
+            width: 450px;
+            position: absolute;
+            top: 64%;
+            right: 19%;
+            object-fit: contain;
+        }
+
+        #start {
+            font-family: 'Passion One', sans-serif;
+            font-size: 80px;
+            color: #931d00;
+            position: absolute;
+            top: 74.5%;
+            right: 30.5%;
+            width: 0;
+            height: 0;
+            cursor: pointer;
+            transform: translateY(-50%);
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="chat"><img src="img/GameStart-chat.png"></div>
+<div class="start"><img src="img/GameStart-start.png">
+<div id="start" onclick="goToLodingPage()">start!</div></div>
+
+<script>
+    function goToLodingPage() {
+        window.location.href = "ing.html";
+    }
+</script>
+</body>
+</html>
