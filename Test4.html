@@ -14,7 +14,7 @@
         }
 
         #bg {
-            background-image: url('img/test.jpg'); /* 각 페이지에 맞게 이미지 경로 변경 */
+            background-image: url('img/test.jpg');
             background-size: cover;
             background-position: center;
             height: 100%;
@@ -45,7 +45,10 @@
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
         }
-
+        .pulse-animation {
+            animation: pulse 1s infinite;
+        }
+        
         #quiz-container {
             width: 500px;
             padding: 20px;
@@ -66,7 +69,7 @@
         }
 
         #image-container img {
-            width: 2880px; /* 원하는 너비 */
+            width: 2880px;
             height: 1620px;
         }
 
@@ -88,7 +91,7 @@
     </div>
 
     <div id="quiz-container">
-        <h1>Test 1</h1> <!-- 각 페이지에 맞게 제목 변경 -->
+        <h1>Test 1</h1> 
         <p id="question-text"></p>
         <div id="options"></div>
     </div>
@@ -99,7 +102,7 @@
 <script>
     // 변수 선언
     let currentQuestion = 0;
-    let currentTest = 4; // 각 페이지에 맞게 테스트 번호 변경
+    let currentTest = 4; 
     let score = 0;
     let lives = 3;
 
