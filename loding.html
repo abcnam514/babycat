@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading ...잠입중</title>
+    <style>
+        #wrap {
+            text-align: center;
+            position: relative;
+        }
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url("img/loding-bg.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        .lod {
+            border-radius: 50px;
+            width: 500px;
+            height: 30px;
+            background-color: #ffcf8a;
+            position: absolute;
+            top: 780px;
+            left: 1000px;
+            overflow: hidden;
+            margin: auto;
+        }
+        .lodin {
+            width: 0;
+            height: 100%;
+            background-color: rgb(96, 145, 77);
+            position: absolute;
+            animation: loading 3s forwards;
+        }
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="bg"></div>
+    <img src="img/loding.png">
+    <div class="lod"><div class="lodin"></div></div>
+</div>
+
+<script>
+    const loadingBar = document.querySelector('.lodin');
+
+    loadingBar.addEventListener('animationend', () => {
+        // 로딩바 애니메이션이 끝나면 welcome.html로 이동
+        window.location.href = 'welcome.html';
+    });
+</script>
+</body>
+</html>

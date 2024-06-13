@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=BM+HANNA+11yrs+oldOTF&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-image: url("img/story-bg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #chat {
+            text-align: center;
+            position: relative;
+        }
+
+        #chat img {
+            width: 1000px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #chat p {
+            font-family: 'BM HANNA 11yrs old OTF', sans-serif;
+            font-size: 26px;
+            color: #742600;
+            position: absolute;
+            top: 39%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        #chat p span:hover {
+            color: white;
+        }
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #next-btn {
+            position: absolute;
+            top: 70.5%;
+            right: 33.5%;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-left: 20px solid #742600;
+            border-bottom: 15px solid transparent;
+            cursor: pointer;
+            transform: translateY(-50%);
+            animation: blink 1s infinite;
+        }
+    </style>
+</head>
+<body>
+<img src="img/story.gif" width="1200px">
+
+<div id="chat">
+    <img src="img/chat.png">
+    <p>
+        <span style="color: #ffcf8a">아기고양이's mom > 탐정</span><br>
+        <br><br>
+        기억력이 꽝인 탐정에게 실종된 아기 고양이의 <span>정보 자료</span>와 함께<br>
+        아기 고양이가 <span>실종</span>됐다는 신고가 접수되고<br>
+        실종된 거처를 찾아내 <span>범인의 부하</span>로 분장하여 몰래 잠입하게 되는데 ...
+    </p>
+    <div id="next-btn" onclick="goToLodingPage()"></div>
+</div>
+
+<script>
+    function goToLodingPage() {
+        window.location.href = "loding.html";
+    }
+</script>
+</body>
+</html>
